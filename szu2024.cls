@@ -61,11 +61,11 @@
 
 
 %调整目录显示规则
-\titlecontents{section}[0em]{\bfseries\zihao{-4}}{\contentspush{\thecontentslabel\hspace{1em}}}{}{\titlerule*{$\cdot$}\contentspage\vspace{1.6pt}}%
+\titlecontents{section}[0em]{\bfseries\zihao{-4}}{\contentspush{\thecontentslabel\hspace{1em}}}{}{\titlerule*[0.4pc]{.}\contentspage\vspace{1.6pt}}%
 
-\titlecontents{subsection}[2em]{\zihao{-4}}{\thecontentslabel\hspace{1em}}{}{\titlerule*{$\cdot$}\contentspage\vspace{1.6pt}}
+\titlecontents{subsection}[2em]{\zihao{-4}}{\thecontentslabel\hspace{1em}}{}{\titlerule*[0.4pc]{.}\contentspage\vspace{1.6pt}}
 
-\titlecontents{subsubsection}[4em]{\zihao{-4}}{\thecontentslabel\hspace{1em}}{}{\titlerule*{$\cdot$}\contentspage\vspace{1.6pt}}
+\titlecontents{subsubsection}[4em]{\zihao{-4}}{\thecontentslabel\hspace{1em}}{}{\titlerule*[0.4pc]{.}\contentspage\vspace{1.6pt}}
 
 %图标目录设置 没使用
 \titlecontents{figure}[0em]{\zihao{4}}{图~\thecontentslabel\hspace{1em}}{}{\titlerule*{$\cdot$}\contentspage}
