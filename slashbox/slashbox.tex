@@ -1,0 +1,68 @@
+\documentstyle[12pt,slashbox]{article}
+\pagestyle{empty}
+\begin{document}
+\begin{center}
+\large\bf
+Sample text for {\tt slashbox.sty}
+\end{center}
+
+The usage is pretty straightforward, such as
+\bigskip
+
+\noindent
+\begin{tabular}{|l||*{5}{c|}}\hline
+\backslashbox{Room}{Date}
+&\makebox[3em]{5/31}&\makebox[3em]{6/1}&\makebox[3em]{6/2}
+&\makebox[3em]{6/3}&\makebox[3em]{6/4}\\\hline\hline
+Meeting Room &&&&&\\\hline
+Auditorium &&&&&\\\hline
+Seminar Room &&&&&\\\hline
+\end{tabular}
+
+\bigskip
+You may include a newline (\verb+\\+) in `Room' and/or `Date'.
+Note that you will get spaces aside the slash line if there is a
+wider column in the same column of a different line.
+In such a case, you need to specify the width of the slashed column
+by saying
+
+\bigskip
+
+\noindent
+\begin{tabular}{|l||*{4}{c|}}\hline
+\backslashbox[48mm]{Room}{Date}
+&\makebox[3em]{5/31}&\makebox[3em]{6/1}&\makebox[3em]{6/2}
+&\makebox[3em]{6/3}\\\hline\hline
+Room With a Long Name &&&&\\\hline
+Auditorium &&&&\\\hline
+Seminar Room &&&&\\\hline
+\end{tabular}
+
+\bigskip
+The specified width is neglected if it is narrower than the natural
+width of the column.
+
+\verb+\(back)slashbox+ assumes by default that there is a blank space
+of width \verb+\tabcolsep+ on both sides of the column.
+Thus the slash line might exceeds the boundary when you use \verb+@{}+ 
+etc.
+
+You can avoid it by specifying
+\bigskip
+
+\noindent
+\begin{tabular}{|@{\ $\bullet$\hspace*{3mm}}l||*{5}{c|}}\hline
+\multicolumn{1}{|@{}l||}{\backslashbox[0pt][l]{Room}{Date}}
+&\makebox[3em]{5/31}&\makebox[4em]{6/1}&\makebox[3em]{6/2}
+&\makebox[3em]{6/3}&\makebox[3em]{6/4}\\\hline\hline
+Meeting Room &&&&&\\\hline
+Auditorium &&&&&\\\hline
+Seminar Room &&&&&\\\hline
+\end{tabular}
+\bigskip
+
+Here \verb+[l]+ tells the command that there is no extra space on the
+left of this column.  You can use \verb+[r]+ and \verb+[lr]+ likewise.
+You have to also specify the width of the column in this case, but it
+can be 0pt.
+\end{document}

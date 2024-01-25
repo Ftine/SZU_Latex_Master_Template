@@ -1,0 +1,153 @@
+\documentclass[UTF8,AutoFakeBold]{szu2024}
+
+
+\renewcommand{\titleCN}{基于xx分析}
+\renewcommand{\titleEN}{Analysis Based on xx}
+
+
+% 文本
+\usepackage{ctex}
+\usepackage{fancyhdr}
+
+% dgq package
+\usepackage{makecell}
+
+
+%圆
+%\usepackage{xeCJK}
+
+%%adding package 边距设置
+\usepackage[left=31.7mm,right=31.7mm,top=25.4mm,bottom=25.4mm]{geometry}
+\usepackage{titlesec}
+
+\usepackage{setspace} %使用调整行距的包
+\usepackage{subfigure,floatrow}
+\usepackage{url}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{caption,cite,amsbsy,amsmath,amsfonts,multirow,color,array,booktabs,colortbl}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{pdfpages}
+\usepackage{changepage}
+
+
+% \usepackage{algorithmicx,algorithm}
+\usepackage{epsfig,bm}
+\usepackage{slashbox}
+\usepackage{enumitem}
+\usepackage{amssymb,amsthm,amssymb}
+\usepackage{graphicx,subfigure}
+\usepackage{graphicx}
+\usepackage{ulem}
+\usepackage{floatrow}
+\usepackage{arydshln} % 加载arydshln宏包
+\usepackage{tabularx}
+\floatsetup[table]{capposition=top}
+\floatsetup[figure]{capposition=bottom}
+\newfloatcommand{capbtabboxTable}{table}[][\FBwidth]
+\newfloatcommand{capbtabboxFigure}{figure}[][\FBwidth]
+\newcommand{\norm}[1]{\left\lVert #1 \right\rVert}
+
+
+% 重新调整参考文献项目之间的行距
+\usepackage{bibspacing}
+\setlength{\bibspacing}{1\baselineskip}
+
+%给目录和参考文献加上超链接
+\usepackage[hidelinks]{hyperref}
+
+%引用
+\newcommand{\upcite}[1]{{\textsuperscript{\cite{#1}}}}
+
+%defines the height of the header
+% \setlength{\headheight}{15pt}
+\setlength{\headheight}{23pt}
+\setlength{\headsep}{7.25mm}
+
+
+%document begin
+\begin{document}
+
+%封面 自行配置生成pdf文件导入即可
+\includepdf[pages={1,2}]{chapter/masterPage.pdf}
+
+%中英文摘要 以及 缩写表
+\input{chapter/abstract.tex} 
+
+\setlength{\baselineskip}{23pt} %设置行距23磅
+
+\tableofcontents	%目录
+
+%%%%%%%%% 图索引和表索引
+% \renewcommand\listfigurename{\songti\zihao{2}{\textbf{图~~目~~录}}}
+% \renewcommand\listtablename{\songti\zihao{2}{\textbf{表~~目~~录}}}
+
+% \renewcommand{\figurename}{图}
+% \renewcommand{\tablename}{表}
+
+\makeatletter %
+\@addtoreset{equation}{section}
+\makeatother  %
+\renewcommand\theequation{{\thesection}%
+				.{\arabic{equation}}}
+%%%%%%%%%% 表每节重新标号
+\makeatletter %
+\@addtoreset{table}{section}
+\makeatother  %
+\renewcommand{\thetable}{\thesection-\arabic{table}}
+\captionsetup[table]{labelsep=space, labelfont=bf}
+%%%%%%%% 图每节重新标号
+\makeatletter %
+\@addtoreset{figure}{section}
+\makeatother  %
+\renewcommand{\thefigure}{\thesection-\arabic{figure}}
+\captionsetup[figure]{labelsep=space, labelfont=bf}
+%labelfont=normalfont}
+% subfigure重新编号\ref
+\makeatletter
+\renewcommand{\p@subfigure}{\thefigure}
+\makeatother
+
+
+%adding chapters 1-5 从1开始计数
+\setcounter{page}{1}
+
+\input{chapter/cp1.tex}
+\input{chapter/cp2.tex}
+\input{chapter/cp3.tex}
+\input{chapter/cp4.tex}
+\input{chapter/cp5.tex}
+
+
+\clearpage
+%参考文献
+\fancyhead{}
+\fancyhead[C]{\songti\zihao{5}{参考文献}}
+\fancyfoot[C]{\songti\zihao{5}{\thepage}}
+
+\begin{spacing}{1.8}
+	\bibliographystyle{gbt7714-2005} 
+	\bibliography{ref_paper}
+\end{spacing}
+
+
+
+\clearpage
+\fancyhead{}
+\fancyhead[C]{\songti\zihao{5}{致谢}}
+\fancyfoot[C]{\songti\zihao{5}{\thepage}}
+\input{chapter/thanks.tex}
+
+\clearpage
+\fancyhead{}
+\fancyhead[C]{\songti\zihao{5}{攻读硕士学位期间学术成果}}
+\fancyfoot[C]{\songti\zihao{5}{\thepage}}
+\input{chapter/myPapers.tex}
+
+\end{document}
+
+%当需要在论文末尾插入相关的文件，可以生成pdf文件格式进行附加，附加一页就是1，多页就是1，2，3
+%\includepdf[pages={1}]{chapter/comment.pdf}
+%\includepdf[pages={1}]{chapter/decision.pdf}
+
