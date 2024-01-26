@@ -100,7 +100,7 @@
         \phantomsection % 添加超链接的目标位置
 	\hypertarget{references}{} % 设置超链接的目标位置
 		%行距
-        \setstretch{1.15}
+        \setstretch{1.25}
         \addcontentsline{toc}{\newContects}{\songti\textbf{参考文献}} % \zihao{-4}
         %字体
         \songti\zihao{5}{\savedbibliographystyle{#1}}
