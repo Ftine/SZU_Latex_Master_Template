@@ -61,11 +61,21 @@
 
 
 %调整目录显示规则
+% \titlecontents{section}[0em]{\bfseries\zihao{-4}}{\contentspush{\thecontentslabel\hspace{1em}}}{}{\titlerule*{$\cdot$}\contentspage\vspace{1.6pt}}%
+
+% \titlecontents{subsection}[2em]{\zihao{-4}}{\thecontentslabel\hspace{1em}}{}{\titlerule*{$\cdot$}\contentspage\vspace{1.6pt}}
+
+% \titlecontents{subsubsection}[4em]{\zihao{-4}}{\thecontentslabel\hspace{1em}}{}{\titlerule*{$\cdot$}\contentspage\vspace{1.6pt}}
+
+
 \titlecontents{section}[0em]{\bfseries\zihao{-4}}{\contentspush{\thecontentslabel\hspace{1em}}}{}{\titlerule*[0.4pc]{.}\contentspage\vspace{1.6pt}}%
 
 \titlecontents{subsection}[2em]{\zihao{-4}}{\thecontentslabel\hspace{1em}}{}{\titlerule*[0.4pc]{.}\contentspage\vspace{1.6pt}}
 
 \titlecontents{subsubsection}[4em]{\zihao{-4}}{\thecontentslabel\hspace{1em}}{}{\titlerule*[0.4pc]{.}\contentspage\vspace{1.6pt}}
+
+
+
 
 %图标目录设置 没使用
 \titlecontents{figure}[0em]{\zihao{4}}{图~\thecontentslabel\hspace{1em}}{}{\titlerule*{$\cdot$}\contentspage}
@@ -93,17 +103,17 @@
 }
 
 %参考文献样式
+
 \let\savedbibliographystyle\bibliographystyle
 \renewcommand{\bibliographystyle}[1]{
 	\newpage
         %中文字体
         \phantomsection % 添加超链接的目标位置
-	\hypertarget{references}{} % 设置超链接的目标位置
-		%行距
+	\hypertarget{references}{}     % 设置超链接的目标位置
         \setstretch{1.25}
         \addcontentsline{toc}{\newContects}{\songti\textbf{参考文献}} % \zihao{-4}
-        %字体
-        \songti\zihao{5}{\savedbibliographystyle{#1}}
+        \songti\zihao{5}
+        \savedbibliographystyle{#1}
 }
 
 
@@ -227,6 +237,33 @@
 
 
 % section title设置
+% \ctexset{
+%   section = {
+%     name={第,章},number={\chinese{section}},
+%     format+={\heiti\bfseries\zihao{3}},
+%     titleformat={\heiti \zihao {3}},
+%     numberformat={\heiti \zihao {3}},
+%     beforeskip = 10.0ex plus 0.2ex minus .2ex,
+% 		%afterskip用于设置章节标题后的垂直间距
+%     afterskip = 10.0ex plus 0.2ex minus .2ex,
+%   },
+%   subsection = {
+%     name={,},number={\thesubsection},
+%     format+={\heiti\bfseries\zihao{-3}},
+%     titleformat={\heiti \zihao {-3}},
+%     numberformat={\heiti \zihao {-3}},
+%     beforeskip={24pt},afterskip={6pt},
+%   },   
+%   subsubsection = {
+%     name={,},number={\thesubsubsection},
+%     format+={\songti\bfseries\zihao{4}},
+%     titleformat={\songti \zihao {4}},
+%     numberformat={\songti \zihao {4}},
+%     beforeskip={12pt},afterskip={6pt},
+%   }
+% }
+
+
 
 \CTEXsetup[name={第,章},number={\chinese{section}}]{section}
 \CTEXsetup[format+={\heiti\bfseries\zihao{3}}]{section}
