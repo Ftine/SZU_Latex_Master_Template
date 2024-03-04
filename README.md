@@ -9,6 +9,17 @@
 - 完成文本格式更改
 - 完成致谢和研究成果更改
 
+### 更新说明
+
+2024-3-4 更改 master_pang.tex文件中的96行代码 公式样式。 感谢@modest-Hamilton 的指正。
+
+```tex
+% 公式更改为3-2样式
+\renewcommand\theequation{{\thesection}-{\arabic{equation}}}
+```
+
+
+
 ### 使用教程
 
 下载该文件zip导入到相关的latex编辑工具即可，推荐使用overleaf，注意更改编译器为XeLaTex。

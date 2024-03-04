@@ -93,8 +93,9 @@
 \makeatletter %
 \@addtoreset{equation}{section}
 \makeatother  %
-\renewcommand\theequation{{\thesection}%
-				.{\arabic{equation}}}
+% 公式更改为3-2样式
+\renewcommand\theequation{{\thesection}-{\arabic{equation}}}
+
 %%%%%%%%%% 表每节重新标号
 \makeatletter %
 \@addtoreset{table}{section}
