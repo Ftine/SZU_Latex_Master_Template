@@ -120,8 +120,10 @@
 %中文摘要
 \newenvironment{abstractCN}{
 	\newpage
+    \pagenumbering{Roman}
 	\thispagestyle{fancy}
-	\pagenumbering{Roman}
+	\fancyhead[C]{\songti\zihao{5}{\titleCN}}
+	\fancyfoot[C]{\songti\zihao{5}{\thepage}}
         % 让加入的目录带超链接	
         \phantomsection % 添加超链接的目标位置
 	\hypertarget{abstractCN}{} % 设置超链接的目标位置
@@ -138,9 +140,9 @@
 
 %中文关键词
 \newenvironment{keywordCN}{
-	\vspace{2\baselineskip}	%空两行
         \fancyhead[C]{\songti\zihao{5}{\titleCN}}
 	\fancyfoot[C]{\songti\zihao{5}{\thepage}}
+        \vspace{2\baselineskip}	%空两行
 	\songti\zihao{-4}
         \thispagestyle{fancy}
 	\noindent{{\heiti\zihao{-4}\textbf{关键词：}}}
