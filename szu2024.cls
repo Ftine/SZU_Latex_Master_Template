@@ -18,13 +18,12 @@
 
 % % 设置表格标题格式
 %\captionsetup[table]{labelfont=bfseries, font=bf}
-
 % 设置图形标题格式
 % 设置表格标题格式 加粗 字体大小
 \captionsetup{font={bf, wuhao}}
 
 \renewcommand{\thefigure}{\arabic{figure}}	%图表的计数方式
-\renewcommand{\thetable}{\arabic{table}}
+\renewcommand{\thetable}{\arabic{table}}   %图表的计数方式
 
 
 \renewcommand{\contentsname}{\heiti\zihao{3}{\textbf{目~录}\vspace{1\baselineskip}}}
