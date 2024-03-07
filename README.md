@@ -14,7 +14,7 @@
 
 ### <u>更新说明</u>
 
-**2024-3-4** 更改 `master_pang.tex`文件中的96行代码 公式样式。 感谢@modest-Hamilton 的指正。
+**2024-3-4** 更改 `master_pang.tex`文件中的96行代码 公式样式。 感谢@**[modest-Hamilton](https://github.com/modest-Hamilton)**  的指正。
 
 ```tex
 % 公式更改为3-2样式
@@ -26,6 +26,28 @@
 > 该内容中存在一个问题：若摘要页数为 2 ，请第二页尽量保持文字字数为 4 行以上，否则也会出现页眉被强制替换的情况
 
 - 替换请替换 `szu2024.cls` 中 120-180的代码。
+
+**2024-3-7** 中文硕士博士论文引用格式，感谢@**[disturb-yy](https://github.com/disturb-yy)** 的分享
+
+>中文的硕士引用 和 博士引用基本一致。
+>
+>博士格式：
+>[@PhDThesis](https://github.com/PhDThesis){zhu1996,
+>title={新型流体有限元法及叶轮机械正反混合问题},
+>author={朱刚},
+>school={清华大学},
+>address={北京},
+>year={1996},
+>}
+>
+>硕士：
+>[@MasterThesis](https://github.com/MasterThesis){zhu1996,
+>title={新型流体有限元法及叶轮机械正反混合问题},
+>author={朱刚},
+>school={清华大学},
+>address={北京},
+>year={1996},
+>}
 
 ------
 
