@@ -56,7 +56,7 @@
 ```tex
 %二级标题 2em 改为 1em
 \titlecontents{subsection}[1em]{\zihao{-4}}
-%三级标题 3em 改为 1.8em
+%三级标题 4em 改为 1.8em
 \titlecontents{subsubsection}[1.8em]{\zihao{-4}}
 ```
 
