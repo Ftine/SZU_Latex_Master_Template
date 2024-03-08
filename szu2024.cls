@@ -69,9 +69,9 @@
 
 \titlecontents{section}[0em]{\bfseries\zihao{-4}}{\contentspush{\thecontentslabel\hspace{1em}}}{}{\titlerule*[0.4pc]{.}\contentspage\vspace{1.6pt}}%
 
-\titlecontents{subsection}[2em]{\zihao{-4}}{\thecontentslabel\hspace{1em}}{}{\titlerule*[0.4pc]{.}\contentspage\vspace{1.6pt}}
+\titlecontents{subsection}[1em]{\zihao{-4}}{\thecontentslabel\hspace{1em}}{}{\titlerule*[0.4pc]{.}\contentspage\vspace{1.6pt}}
 
-\titlecontents{subsubsection}[4em]{\zihao{-4}}{\thecontentslabel\hspace{1em}}{}{\titlerule*[0.4pc]{.}\contentspage\vspace{1.6pt}}
+\titlecontents{subsubsection}[1.8em]{\zihao{-4}}{\thecontentslabel\hspace{1em}}{}{\titlerule*[0.4pc]{.}\contentspage\vspace{1.6pt}}
 
 
 

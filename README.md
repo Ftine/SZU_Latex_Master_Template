@@ -49,6 +49,19 @@
 >year={1996},
 >}
 
+**2024-3-8** 修改目录二级、三级目录缩进过多问题，觉得不合适的可以微调。个人觉得合适的距离如下，具体修改如下
+
+-  `szu2024.cls` 中 文件中的第 73 和 75 行 代码修改，具体代码行请自己对照
+
+```tex
+%二级标题 2em 改为 1em
+\titlecontents{subsection}[1em]{\zihao{-4}}
+%三级标题 3em 改为 1.8em
+\titlecontents{subsubsection}[1.8em]{\zihao{-4}}
+```
+
+
+
 ------
 
 
