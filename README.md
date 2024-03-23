@@ -78,13 +78,13 @@
 \pagestyle{empty} 改为 \pagestyle{plain}
 ```
 
-- 脚注问题 请参考Issues#8  @**[modest-Hamilton](https://github.com/modest-Hamilton)** 用户的解决措施，问题不会关闭
+- 脚注问题 请参考Issues#8  @**[modest-Hamilton](https://github.com/modest-Hamilton)** 用户的解决措施，问题不会关闭[脚注的问题 · Issue #8 · Ftine/SZU_Latex_Master_Template (github.com)](https://github.com/Ftine/SZU_Latex_Master_Template/issues/8)
 
 - 参考文献会议和期刊卷码`volume`格式存在不统一、以及存在期刊名称大小写不一致问题，可以手动修改。
 
 > 该部分错误来源于Bib引用本身的问题，引用会存在不一致，若需要修改。
 >
-> 1. `volume` 参考 Issues11 @**[ZFNSQM](https://github.com/ZFNSQM)** 用户的回答。
+> 1. `volume` 参考 Issues#11 @**[ZFNSQM](https://github.com/ZFNSQM)** 用户的回答。 [参考文献格式问题 · Issue #11 · Ftine/SZU_Latex_Master_Template (github.com)](https://github.com/Ftine/SZU_Latex_Master_Template/issues/11)
 > 2. 期刊名称大小写不一致问题是指 一些期刊为 `Axxx,xxx,xxx` 一些为 `Bxxx,Cxxxxx,Dxxxxx`,可以在Bib引用中手动修改完成
 
 
