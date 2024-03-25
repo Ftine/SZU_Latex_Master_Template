@@ -87,6 +87,15 @@
 > 1. `volume` 参考 Issues#11 @**[ZFNSQM](https://github.com/ZFNSQM)** 用户的回答。 [参考文献格式问题 · Issue #11 · Ftine/SZU_Latex_Master_Template (github.com)](https://github.com/Ftine/SZU_Latex_Master_Template/issues/11)
 > 2. 期刊名称大小写不一致问题是指 一些期刊为 `Axxx,xxx,xxx` 一些为 `Bxxx,Cxxxxx,Dxxxxx`,可以在Bib引用中手动修改完成
 
+**2024-3-25**  参考文献格式提示修改，学校引用格式由`gbt7714-2005`更新为`gbt7714-2015`格式 , 根据@**[modest-Hamilton](https://github.com/modest-Hamilton)** 在Issue#11中的分享，做出一下更新。
+
+- 添加两个引用格式文件 gbt7714.sty 以及 gbt7714-numerical.bst ，修改 master_pang.tex中引用格式
+
+```tex
+% master_pang.tex 文件 135行左右的代码
+\bibliographystyle{gbt7714-numerical}
+```
+
 
 
 ------
