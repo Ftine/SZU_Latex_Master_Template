@@ -89,12 +89,14 @@
 
 **2024-3-25**  参考文献格式提示修改，学校引用格式由`gbt7714-2005`更新为`gbt7714-2015`格式 , 根据@**[modest-Hamilton](https://github.com/modest-Hamilton)** 在Issue#11中的分享，做出一下更新。
 
-- 添加两个引用格式文件 gbt7714.sty 以及 gbt7714-numerical.bst ，修改 master_pang.tex中引用格式
-
-```tex
-% master_pang.tex 文件 135行左右的代码
-\bibliographystyle{gbt7714-numerical}
-```
+>- 添加两个引用格式文件 gbt7714.sty 以及 gbt7714-numerical.bst ，修改 master_pang.tex中引用格式
+>
+>```tex
+>% master_pang.tex 文件 135行左右的代码
+>\bibliographystyle{gbt7714-numerical} 
+>```
+>
+>**请注意会出现arXiv文章引用错误，无法显示arXiv等编号**
 
 
 
