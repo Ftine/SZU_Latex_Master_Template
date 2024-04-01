@@ -82,7 +82,7 @@
 
 > 编辑、维护和更新不易，如若愿意微信赞赏，不胜感谢。
 
-![image-20240401150603031](C:\Users\ftion\AppData\Roaming\Typora\typora-user-images\image-20240401150603031.png)
+![image-20240401150603031](vszs.png)
 
 ### 使用教程
 
