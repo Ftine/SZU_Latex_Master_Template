@@ -2,7 +2,7 @@
 \ProvidesClass{szu2024}
 [2024/4/1 v1 Thesis Template for SZU Postgraduate]
 \LoadClass[cs4size,12pt,a4paper,fntef,UTF8]{ctexart}[2024/4/1]
-% 源代码地址：https://github.com/Ftine/SZU_Latex_Master_Template
+% 源代码地址： https://github.com/Ftine/SZU_Latex_Master_Template 
 
 \RequirePackage{amsmath,amsthm,amsfonts,amssymb,bm,times,fancyhdr}
 \RequirePackage{epigraph, titlesec, textcomp, ctex}
