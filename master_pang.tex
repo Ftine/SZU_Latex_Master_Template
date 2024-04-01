@@ -1,9 +1,8 @@
 \documentclass[UTF8,AutoFakeBold]{szu2024}
+\renewcommand{\titleCN}{基于XXX研究}
+\renewcommand{\titleEN}{The Research Base on XXXX}
 
-
-\renewcommand{\titleCN}{基于xx分析}
-\renewcommand{\titleEN}{Analysis Based on xx}
-
+% 源代码地址：https://github.com/Ftine/SZU_Latex_Master_Template
 
 % 文本
 \usepackage{ctex}
@@ -12,14 +11,14 @@
 % dgq package
 \usepackage{makecell}
 
-
+\usepackage{fontspec}
 %圆
 %\usepackage{xeCJK}
 
 %%adding package 边距设置
 \usepackage[left=31.7mm,right=31.7mm,top=25.4mm,bottom=25.4mm]{geometry}
-\usepackage{titlesec}
 
+\usepackage{titlesec}
 \usepackage{setspace} %使用调整行距的包
 \usepackage{subfigure,floatrow}
 \usepackage{url}
@@ -31,6 +30,7 @@
 \usepackage{pdfpages}
 \usepackage{changepage}
 
+\usepackage{titlesec}
 
 % \usepackage{algorithmicx,algorithm}
 \usepackage{epsfig,bm}
@@ -50,12 +50,19 @@
 \newcommand{\norm}[1]{\left\lVert #1 \right\rVert}
 
 
+\newtheorem{definition}{定义}[] % 跟随三级标题排序
+\newtheorem{theorem}{定理}[]  %跟随二级标题排序
+\newtheorem{lemma}[theorem]{引理}
+\newtheorem{corollary}[theorem]{推论}
+\newtheorem{proposition}{命题}[]
+
+
 % 重新调整参考文献项目之间的行距
 \usepackage{bibspacing}
 \setlength{\bibspacing}{1\baselineskip}
 
 %给目录和参考文献加上超链接
-\usepackage[hidelinks]{hyperref}
+%\usepackage[hidelinks]{hyperref}
 
 %引用
 \newcommand{\upcite}[1]{{\textsuperscript{\cite{#1}}}}
@@ -67,35 +74,66 @@
 
 
 \hypersetup{
-    pdfborder = {0 0 0} 
+	pdfborder = {0 0 0} 
 }
+
+%\titleformat{\section}{\center\zihao{3}\heiti\bfseries\sectionef}{第\,\zhnumber{\thesection}\,章}{1em}{}
+
+% 在导言区定义新字体族
+\newfontfamily\sectionef{Arial}
+
+\ctexset{
+		section={
+				format+ = \heiti\bfseries\zihao{3}\sectionef,
+				name = {第,章},
+				number = \chinese{section}
+	}
+}	
+
+
+\titleformat{\subsection}{\zihao{-3}\heiti\bfseries\sectionef}{\thesubsection}{1em}{}
+
+\titleformat{\subsubsection}{\zihao{4}\bfseries\fontspec{songti-Bold.otf}}{\thesubsubsection}{1em}{}
+
+
+% 定义目录标题样式
+\titlecontents{section}[0em]{\bfseries\fontspec{songti-Bold.otf}\zihao{-4}}{\contentspush{\thecontentslabel\hspace{1em}}}{}{\titlerule*[0.4pc]{.}\contentspage\vspace{1.6pt}}%
+
+%\titlecontents{section}[0em]{\bfseries\zihao{-4}}{\contentspush{\thecontentslabel\hspace{1em}}}{}{\titlerule*[0.4pc]{.}\contentspage\vspace{1.6pt}}%
+
+\titlecontents{subsection}[1em]{\fontspec{simsun.ttc}\zihao{-4}}{{\thecontentslabel}\hspace{1em}}{}{\titlerule*[0.4pc]{.}\contentspage\vspace{1.6pt}}
+
+\titlecontents{subsubsection}[1.8em]{\fontspec{simsun.ttc}\zihao{-4}}{\thecontentslabel\hspace{1em}}{}{\titlerule*[0.4pc]{.}\contentspage\vspace{1.6pt}}
+
+
+
 
 %document begin
 \begin{document}
-
+	
 %封面 自行配置生成pdf文件导入即可
 \includepdf[pages={1,2}]{chapter/masterPage.pdf}
-
+	
 %中英文摘要 以及 缩写表
 \input{chapter/abstract.tex} 
-
+	
 \setlength{\baselineskip}{23pt} %设置行距23磅
-
+	
 \tableofcontents	%目录
-
+	
 %%%%%%%%% 图索引和表索引
 % \renewcommand\listfigurename{\songti\zihao{2}{\textbf{图~~目~~录}}}
 % \renewcommand\listtablename{\songti\zihao{2}{\textbf{表~~目~~录}}}
-
+	
 % \renewcommand{\figurename}{图}
 % \renewcommand{\tablename}{表}
-
+	
 \makeatletter %
 \@addtoreset{equation}{section}
 \makeatother  %
 % 公式更改为3-2样式
 \renewcommand\theequation{{\thesection}-{\arabic{equation}}}
-
+	
 %%%%%%%%%% 表每节重新标号
 \makeatletter %
 \@addtoreset{table}{section}
@@ -146,13 +184,14 @@
 
 \clearpage
 \fancyhead{}
-\fancyhead[C]{\songti\zihao{5}{攻读硕士学位期间的科研成果}}
+\fancyhead[C]{\songti\zihao{5}{攻读硕士学位期间的学术成果}}
 \fancyfoot[C]{\songti\zihao{5}{\thepage}}
 \input{chapter/myPapers.tex}
 
 \end{document}
 
+% 源代码地址：https://github.com/Ftine/SZU_Latex_Master_Template
+
 %当需要在论文末尾插入相关的文件，可以生成pdf文件格式进行附加，附加一页就是1，多页就是1，2，3
 %\includepdf[pages={1}]{chapter/comment.pdf}
 %\includepdf[pages={1}]{chapter/decision.pdf}
-

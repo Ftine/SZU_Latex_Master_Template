@@ -623,11 +623,11 @@ FUNCTION {format.names} {                         % String Entry::format_names(S
     remove.dots 'jrname :=                        %     jrname = remove_dots(tmp);
     namelist nameindex "{f}" format.name$         %     tmp = format_name(namelist, nameindex, "{f}");
     remove.dots                                   %     tmp = remove_dots(tmp);
-    % "u" change.case$ 'firstname :=              %     firstname = change_case(tmp, "u");
-    'firstname :=                %     firstname = change_case(tmp, "u");
+    "u" change.case$ 'firstname :=              %     firstname = change_case(tmp, "u");
+    % 'firstname :=                %     firstname = change_case(tmp, "u");
     namelist nameindex "{ll}" format.name$        %     tmp = format_name(namelist, nameindex, "{ll}");
-    % "u" change.case$ 'lastname :=               %     lastname = change_case(tmp, "u");
-    'lastname :=                 %     lastname = change_case(tmp, "u");
+    "u" change.case$ 'lastname :=               %     lastname = change_case(tmp, "u");
+    % 'lastname :=                 %     lastname = change_case(tmp, "u");
     jrname empty$ not {                           %     if (! empty(jrname)) {
       jrname * " " *                              %       result = result + jrname + " "
     } 'skip$ if$                                  %     }
@@ -879,14 +879,16 @@ FUNCTION {get.full.booktitle} {                   % String Entry::get_full_bookt
     volume empty$ {                               %       if (empty(this.volume)) {
       booktitle                                   %         return this.booktitle;
     } {                                           %       } else {
-      booktitle cap.colon * cap.volume * volume * %         return this.booktitle + cap_colon + cap_volume() + this.volume;
+      % booktitle cap.colon * cap.volume * volume * %         return this.booktitle + cap_colon + cap_volume() + this.volume;
+      booktitle
     } if$                                         %       }
   } {                                             %     } else {
     volume empty$ {                               %       if (empty(this.volume)) {
       series cap.colon * booktitle *              %         return this.series + cap_colon + this.booktitle;
     } {                                           %       } else {
-      series cap.comma * cap.volume * volume *    %         String str = this.series + cap_comma + cal_volume() + this.volume;
-      cap.colon * booktitle *                     %         return str + cap_colon + this.booktitle;
+      % series cap.comma * cap.volume * volume *    %         String str = this.series + cap_comma + cal_volume() + this.volume;
+      % cap.colon * booktitle *                     %         return str + cap_colon + this.booktitle;
+      series cap.colon * booktitle *
     } if$                                         %       }
   } if$                                           %     }
 }                                                 % }
@@ -1747,8 +1749,8 @@ FUNCTION {inbook.impl} {                          % void Entry::inbook_impl() {
   true output.title                               %   output_title(true);
   true output.mark                                %   output_mark(true);
   false output.translator                         %   output_translator(false);
-  % cap.double.slash write$                       %   write(cap_double_slash);
-  cap.period write$
+  cap.double.slash write$                         %   write(cap_double_slash);
+  %cap.period write$
   false output.editor                             %   output_editor(false);
   true output.series.volume.booktitle             %   output_series_volume_booktitle(true);
   false output.edition                            %   output_edition(false);
@@ -1760,6 +1762,8 @@ FUNCTION {inbook.impl} {                          % void Entry::inbook_impl() {
     cap.period write$                             %     write(cap_period);
   } if$                                           %   }
   true output.year                                %   output_year(true);
+  false output.volume
+  false output.number
   false output.pages                              %   output_pages(false);
   false output.citedate                           %   output_citedate(false);
   false output.url.or.doi                         %   output_url_or_doi(false);

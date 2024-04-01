@@ -1,8 +1,8 @@
 \NeedsTeXFormat{LaTeX2e}[2007/10/19]
 \ProvidesClass{szu2024}
-[2024/1/24 v1 Thesis Template for SZU Postgraduate]
-
-\LoadClass[cs4size,12pt,a4paper,fntef,UTF8]{ctexart}[2024/1/24]
+[2024/4/1 v1 Thesis Template for SZU Postgraduate]
+\LoadClass[cs4size,12pt,a4paper,fntef,UTF8]{ctexart}[2024/4/1]
+% 源代码地址：https://github.com/Ftine/SZU_Latex_Master_Template
 
 \RequirePackage{amsmath,amsthm,amsfonts,amssymb,bm,times,fancyhdr}
 \RequirePackage{epigraph, titlesec, textcomp, ctex}
@@ -55,23 +55,14 @@
 }
 
 
+
 %设置目录树显示深度
 \setcounter{tocdepth}{3}
 
 
-%调整目录显示规则
-% \titlecontents{section}[0em]{\bfseries\zihao{-4}}{\contentspush{\thecontentslabel\hspace{1em}}}{}{\titlerule*{$\cdot$}\contentspage\vspace{1.6pt}}%
 
-% \titlecontents{subsection}[2em]{\zihao{-4}}{\thecontentslabel\hspace{1em}}{}{\titlerule*{$\cdot$}\contentspage\vspace{1.6pt}}
-
-% \titlecontents{subsubsection}[4em]{\zihao{-4}}{\thecontentslabel\hspace{1em}}{}{\titlerule*{$\cdot$}\contentspage\vspace{1.6pt}}
-
-
-\titlecontents{section}[0em]{\bfseries\zihao{-4}}{\contentspush{\thecontentslabel\hspace{1em}}}{}{\titlerule*[0.4pc]{.}\contentspage\vspace{1.6pt}}%
-
-\titlecontents{subsection}[1em]{\zihao{-4}}{\thecontentslabel\hspace{1em}}{}{\titlerule*[0.4pc]{.}\contentspage\vspace{1.6pt}}
-
-\titlecontents{subsubsection}[1.8em]{\zihao{-4}}{\thecontentslabel\hspace{1em}}{}{\titlerule*[0.4pc]{.}\contentspage\vspace{1.6pt}}
+% 自定义小节标题编号的样式
+%\renewcommand{\thesubsection}{\arabic{section}.\arabic{subsection}} % 编号字体设置为黑体
 
 
 
@@ -86,19 +77,19 @@
 
 %//相关设置
 \renewcommand{\tableofcontents}{%
-	\pagestyle{empty}
+	\pagestyle{plain}
 	\savedtableofcontents
 	\newpage
 	\pagenumbering{arabic}
 	\pagestyle{fancy} % 页眉横线样式
 	\fancyhead{}
  
-    %\fancyhead[C]{\songti\zihao{5}{\titleCN}}
-    % 全局页眉 设置为章节标题
-        \fancyhead[C]{\songti\zihao{5}\leftmark}
-    %全局页号设置
-	\fancyfoot[C]{\songti\zihao{5}{\thepage}}
-	\setcounter{page}{1}
+    \fancyhead[C]{\songti\zihao{5}{\titleCN}}
+% 全局页眉 设置为章节标题
+\fancyhead[C]{\songti\zihao{5}\nouppercase\leftmark}
+%全局页号设置
+\fancyfoot[C]{\songti\zihao{5}{\thepage}}
+\setcounter{page}{1}
 }
 
 %参考文献样式
@@ -237,45 +228,37 @@
 
 
 
-% section title设置
-% \ctexset{
-%   section = {
-%     name={第,章},number={\chinese{section}},
-%     format+={\heiti\bfseries\zihao{3}},
-%     titleformat={\heiti \zihao {3}},
-%     numberformat={\heiti \zihao {3}},
-%     beforeskip = 10.0ex plus 0.2ex minus .2ex,
-% 		%afterskip用于设置章节标题后的垂直间距
-%     afterskip = 10.0ex plus 0.2ex minus .2ex,
-%   },
-%   subsection = {
-%     name={,},number={\thesubsection},
-%     format+={\heiti\bfseries\zihao{-3}},
-%     titleformat={\heiti \zihao {-3}},
-%     numberformat={\heiti \zihao {-3}},
-%     beforeskip={24pt},afterskip={6pt},
-%   },   
-%   subsubsection = {
-%     name={,},number={\thesubsubsection},
-%     format+={\songti\bfseries\zihao{4}},
-%     titleformat={\songti \zihao {4}},
-%     numberformat={\songti \zihao {4}},
-%     beforeskip={12pt},afterskip={6pt},
-%   }
-% }
+
+\setCJKfamilyfont{sectionfont}{SimHei} % 设置一级和二级标题字体为黑体
+\setCJKfamilyfont{subsectionfont}{SimHei} 
 
 
 
-\CTEXsetup[name={第,章},number={\chinese{section}}]{section}
-\CTEXsetup[format+={\heiti\bfseries\zihao{3}}]{section}
+% 在导言区定义新字体族
+\newfontfamily\sectionef{Arial}
+
+\ctexset{
+		section={
+				format+ = \heiti\bfseries\zihao{3}\sectionef,
+				name = {第,章},
+				number = \chinese{section}
+	}
+}	
 
 
-\CTEXsetup[name={,},number={\thesubsection}]{subsection}
-\CTEXsetup[format+={\heiti\bfseries\zihao{-3}}]{subsection}
+\titleformat{\subsection}{\zihao{-3}\heiti\bfseries\sectionef}{\thesubsection}{1em}{}
 
-\CTEXsetup[name={,},number={\thesubsubsection}]{subsubsection}
-\CTEXsetup[format+=
-{\songti\bfseries\zihao{4}}]{subsubsection}
+\titleformat{\subsubsection}{\zihao{4}\bfseries\fontspec{songti-Bold.otf}}{\thesubsubsection}{1em}{}
+
+
+% 定义目录标题样式
+\titlecontents{section}[0em]{\bfseries\fontspec{songti-Bold.otf}\zihao{-4}}{\contentspush{\thecontentslabel\hspace{1em}}}{}{\titlerule*[0.4pc]{.}\contentspage\vspace{1.6pt}}%
+
+%\titlecontents{section}[0em]{\bfseries\zihao{-4}}{\contentspush{\thecontentslabel\hspace{1em}}}{}{\titlerule*[0.4pc]{.}\contentspage\vspace{1.6pt}}%
+
+\titlecontents{subsection}[1em]{\fontspec{simsun.ttc}\zihao{-4}}{{\thecontentslabel}\hspace{1em}}{}{\titlerule*[0.4pc]{.}\contentspage\vspace{1.6pt}}
+
+\titlecontents{subsubsection}[1.8em]{\fontspec{simsun.ttc}\zihao{-4}}{\thecontentslabel\hspace{1em}}{}{\titlerule*[0.4pc]{.}\contentspage\vspace{1.6pt}}
 
 
 
