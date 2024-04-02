@@ -148,7 +148,8 @@
  
     \phantomsection % 添加超链接的目标位置
 	\hypertarget{abstractEN}{} % 设置超链接的目标位置
-	\addcontentsline{toc}{\newContects}{\textbf{ABSTRACT}} %\zihao{-4}% 在目录中显示摘要
+	%\addcontentsline{toc}{\newContects}{\textbf{ABSTRACT}} %\zihao{-4}% 在目录中显示摘要
+	\addcontentsline{toc}{\newContects}{\textbf{\textrm{ABSTRACT}}} %
 	\vspace{1\baselineskip}	
 	\begin{center}
 		\songti\zihao{3}{\textbf{~\\}}
