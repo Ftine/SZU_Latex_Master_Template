@@ -15,7 +15,7 @@
 
 ### 2024-5-23 更新 目录增加附录格式表达
 
-> 在 \end{document} 之前插入。
+> 在 master_pang.tex主文件中的 \end{document} 之前插入。 也就是末尾。注意 后续插入相关的pdf文件也应该要在这个 \end{document} 之前。
 >```tex
 >% 在目录中添加一段文本
 >\addtocontents{toc}{\noindent 附：指导教师对研究生学位论文的学术评语\par}
