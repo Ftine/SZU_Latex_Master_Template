@@ -13,6 +13,16 @@
 
 ------
 
+>### 2024-5-23 更新 目录增加附录格式表达
+> 在 \end{document} 之前插入。
+>```tex
+>% 在目录中添加一段文本
+>\addtocontents{toc}{\noindent 附：指导教师对研究生学位论文的学术评语\par}
+>\addtocontents{toc}{答辩委员会决议书\par}
+>```
+
+
+
 ### 2024-4-1重大更新
 
 >**对标题和目录字体进行修改，`gbt7714-2005.bst`,`szu2024.cls`、`master_pang.tex`文件有较大更改** 
